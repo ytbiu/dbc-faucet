@@ -49,22 +49,9 @@ FAUCET_ACCOUNT_MNEMONIC="this is a fake mnemonic"
 NETWORK_DECIMALS=15
 PORT=5555
 RPC_ENDPOINT="http://localhost:9944"
-GOOGLE_CAPTCHA_PRIVATE=6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
-GOOGLE_CAPTCHA_SITE_KEY=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
 NETWORK_UNIT="DBC"
 COOLDOWN=100
 BACKEND_URL=http://localhost:5555
 DRIP_AMOUNT=150
 ENV=Testnet
 ```
-
-### Recaptcha keys
-
-- Both `GOOGLE_CAPTCHA_PRIVATE` and `GOOGLE_CAPTCHA_SITE_KEY` are optional,
-- there is no default `GOOGLE_CAPTCHA_PRIVATE` value - if not given, there's no captcha widget displayed,
-- `GOOGLE_CAPTCHA_SITE_KEY` is hardcoded but can be overwritten.
-- `GOOGLE_CAPTCHA_PRIVATE` and `GOOGLE_CAPTCHA_SITE_KEY` in above snippet are
-  [official Google ones for CI testing purposes](https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha.-what-should-i-do)
-
-Google captcha secret key is a public [well-known test key](https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha.-what-should-i-do),
-do not use for production purposes!
