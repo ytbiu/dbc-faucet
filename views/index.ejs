@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DBC Testnet Faucet</title>
+  <meta name="description" content="Get free tokens for the DBC <%- env %>.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="VC9cE5bPsDPWiMfL6P4hUfyhZd7DXEvL6nPelkTu">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicons.png"> 
+
+  <link rel="manifest" href="/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+
+  <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-201969988-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+</head>
+<body>
+
+  <section>
+    <div class="container">
+      <div class="container--tabs">
+        <div>
+          <h1>DBC Faucet</h1>
+
+          <!-- <img class="faucet" src="/images/faucet.svg" alt="Faucet"> -->
+
+          <form action="/drip" method="POST" class="js-ajax-form">
+            <div class="form-group">
+              <label for="address"><%- env %> wallet address (<%- tokenSymbol %>)</label>
+              <input type="text" name="address" id="address" placeholder="<%- env %> wallet address (<%- tokenSymbol %>)" data-parsley-error-message="You forgot your address!"	 required>
+            </div>
+            <% if (- hasRecaptcha) { %>
+                <div class="g-recaptcha" data-sitekey="<%- recaptchaSiteKey %>"></div>
+            <% } %>
+            <button type="submit" class="button--submit | js-ajax-form-button">submit!</button>
+
+            <div class="form-error | js-ajax-form-message |"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="https://www.deepbrainchain.org/privacy-policy/" target="_blank" title="Privacy Policy">Privacy Policy</a></li>
+        <li><a href="https://www.deepbrainchain.org/cookies-policy/" target="_blank" title="Cookies Policy">Cookies Policy</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="/js/jquery-3.6.0.min.js"></script>
+  <script src="/js/es5-sham.min.js"></script>
+  <script src="/js/parsley.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
